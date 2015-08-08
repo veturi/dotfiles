@@ -18,6 +18,8 @@ set ruler
 
 set hlsearch
 set incsearch
+set ignorecase
+set smartcase
 
 set wildmode=longest,list
 
@@ -28,6 +30,15 @@ execute pathogen#infect()
 
 :nmap \l :setlocal number!<CR>
 :nmap \o :set paste!<CR>
+:nmap \q :nohlsearch<CR>
 
-"set list
-"set listchars=tab:>.,trail:.,extends:#,nbsp:.
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
