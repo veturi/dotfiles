@@ -21,5 +21,7 @@ set incsearch
 
 set wildmode=longest,list
 
+execute pathogen#infect()
+
 "set list
 "set listchars=tab:>.,trail:.,extends:#,nbsp:.
