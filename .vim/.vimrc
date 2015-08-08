@@ -23,6 +23,9 @@ set wildmode=longest,list
 
 execute pathogen#infect()
 
+:nmap j gj
+:nmap k gk
+
 :nmap \l :setlocal number!<CR>
 :nmap \o :set paste!<CR>
 
