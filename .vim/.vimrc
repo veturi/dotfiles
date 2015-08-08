@@ -23,5 +23,8 @@ set wildmode=longest,list
 
 execute pathogen#infect()
 
+:nmap \l :setlocal number!<CR>
+:nmap \o :set paste!<CR>
+
 "set list
 "set listchars=tab:>.,trail:.,extends:#,nbsp:.
