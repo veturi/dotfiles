@@ -1,4 +1,4 @@
-colorscheme default
+colorscheme anderson
 
 filetype on
 filetype plugin on
@@ -36,7 +36,6 @@ execute pathogen#infect()
 :nmap \e :NERDTreeToggle<CR>
 
 " CtrlP
-:nmap ; :CtrlPBuffer<CR>
 :let g:ctrlp_map = '<Leader>t'
 :let g:ctrlp_match_window_bottom = 0
 :let g:ctrlp_match_window_reversed = 0
