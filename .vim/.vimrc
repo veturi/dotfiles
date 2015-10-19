@@ -11,6 +11,10 @@ set autoindent
 set tabstop=4
 set expandtab
 
+" set ai "Auto indent
+" set si "Smart indent
+" set wrap "Wrap lines
+
 :let mapleader = ","
 
 nnoremap <F2> :set nonumber!<CR>
