@@ -67,6 +67,7 @@ au VimEnter * wincmd l " Target the actual file window upon opening
 :let g:ctrlp_dotfiles = 0
 :let g:ctrlp_switch_buffer = 0
 :nmap <leader>e :CtrlPBuffer<CR>
+:nmap <leader>y :CtrlPMixed<CR>
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -78,3 +79,5 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Markdown
+let g:vim_markdown_folding_disabled=1
