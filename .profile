@@ -6,3 +6,5 @@ export NVM_DIR="/Users/jarno/.nvm"
 
 alias dm='docker-machine'
 alias dmenv='dm env default && eval "$(dm env default)"'
+
+alias vim='nvim'
