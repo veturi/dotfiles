@@ -8,3 +8,5 @@ alias dm='docker-machine'
 alias dmenv='dm env default && eval "$(dm env default)"'
 
 alias vim='nvim'
+tic .$TERM.ti
+

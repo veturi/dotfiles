@@ -9,7 +9,7 @@ set cindent
 set sw=2
 set autoindent
 
-set tabstop=4
+set tabstop=2
 set expandtab
 
 " set ai "Auto indent
