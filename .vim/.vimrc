@@ -2,10 +2,11 @@ colorscheme anderson
 
 filetype on
 filetype plugin on
+filetype indent on
 syntax enable
 
 set cindent
-set sw=4
+set sw=2
 set autoindent
 
 set tabstop=4
@@ -43,6 +44,9 @@ execute pathogen#infect()
 :nmap \l :setlocal number!<CR>
 :nmap \o :set paste!<CR>
 :nmap \q :nohlsearch<CR>
+
+" split line from current position
+nnoremap K i<CR><ESC>
 
 " Split pane movement and configuration
 nnoremap <C-J> <C-W><C-J>
