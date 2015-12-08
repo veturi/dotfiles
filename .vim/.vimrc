@@ -87,3 +87,6 @@ command Sd SyntasticToggleMode
 
 " Markdown
 let g:vim_markdown_folding_disabled=1
+
+" close current buffer and switch to previous without closing window / split
+nmap ,d :b#<bar>bd#<CR>
