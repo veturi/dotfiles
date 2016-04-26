@@ -10,3 +10,8 @@ alias dmenv='dm env default && eval "$(dm env default)"'
 alias vim='nvim'
 tic .$TERM.ti
 
+# Retarded homebrew added opt-out google analytics. this disables it.
+# On fresh systems also run this command after installation of brew:
+# git config --file="$(brew --repository)/.git/config" --replace-all homebrew.analyticsdisabled true
+# more info here: https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
+export HOMEBREW_NO_ANALYTICS=1
