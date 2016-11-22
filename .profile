@@ -8,7 +8,7 @@ alias dm='docker-machine'
 alias dmenv='dm env default && eval "$(dm env default)"'
 
 alias vim='nvim'
-tic .$TERM.ti
+# tic ~/.$TERM.ti
 
 # Retarded homebrew added opt-out google analytics. this disables it.
 # On fresh systems also run this command after installation of brew:
@@ -18,3 +18,5 @@ export HOMEBREW_NO_ANALYTICS=1
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+alias tmux="TERM=screen-256color-bce tmux"
