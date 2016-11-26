@@ -85,10 +85,13 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
 
-command Sd SyntasticToggleMode
+" command Sd SyntasticToggleMode
 
 " Markdown
 let g:vim_markdown_folding_disabled=1
 
 " close current buffer and switch to previous without closing window / split
 nmap ,d :b#<bar>bd#<CR>
+
+set pastetoggle=<F10>
+

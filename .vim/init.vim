@@ -1,5 +1,3 @@
-colorscheme anderson
-
 filetype on
 filetype plugin on
 filetype indent on
@@ -85,10 +83,26 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
 
-command Sd SyntasticToggleMode
+" command Sd SyntasticToggleMode
 
 " Markdown
 let g:vim_markdown_folding_disabled=1
 
 " close current buffer and switch to previous without closing window / split
 nmap ,d :b#<bar>bd#<CR>
+
+language en_US
+
+set pastetoggle=<F10>
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"x":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '|', 'right': '|' }
+      \ }
+
+colorscheme anderson
+
