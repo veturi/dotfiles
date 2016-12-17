@@ -20,3 +20,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 alias tmux="TERM=screen-256color-bce tmux"
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi

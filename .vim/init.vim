@@ -29,6 +29,9 @@ set smartcase
 
 set wildmode=longest,list
 
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+nnoremap <F9> :set list! list?<CR>
+
 " Cycle between open buffers
 :nmap <C-n> :bnext<CR>
 :nmap <C-p> :bprev<CR>
