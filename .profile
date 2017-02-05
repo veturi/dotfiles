@@ -10,6 +10,8 @@ alias dmenv='dm env default && eval "$(dm env default)"'
 alias vim='nvim'
 # tic ~/.$TERM.ti
 
+alias gdiff='git diff | diff-so-fancy'
+
 # Retarded homebrew added opt-out google analytics. this disables it.
 # On fresh systems also run this command after installation of brew:
 # git config --file="$(brew --repository)/.git/config" --replace-all homebrew.analyticsdisabled true
@@ -24,3 +26,5 @@ alias tmux="TERM=screen-256color-bce tmux"
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
