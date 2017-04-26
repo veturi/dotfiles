@@ -3,6 +3,7 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 export NVM_DIR="/Users/jarno/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
 alias dm='docker-machine'
 alias dmenv='dm env default && eval "$(dm env default)"'
