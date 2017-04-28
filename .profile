@@ -33,3 +33,10 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 source ~/.git-prompt.sh
 
 export PS1='\[\033[0;32m\]\u@\h\[\033[01;34m\] \W\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
+
+#Share bash history between sessions and for example tmux
+shopt -s histappend
+shopt -s histreedit
+shopt -s histverify
+HISTCONTROL='ignoreboth'
+PROMPT_COMMAND="history -a;history -c;history -r; $PROMPT_COMMAND"
