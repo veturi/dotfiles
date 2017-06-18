@@ -40,3 +40,7 @@ shopt -s histreedit
 shopt -s histverify
 HISTCONTROL='ignoreboth'
 PROMPT_COMMAND="history -a;history -c;history -r; $PROMPT_COMMAND"
+
+export PATH=$PATH:/Users/jarno/bin
+
+source '/Users/jarno/lib/azure-cli/az.completion'
