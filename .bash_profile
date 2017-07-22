@@ -34,13 +34,18 @@ source ~/.git-prompt.sh
 
 export PS1='\[\033[0;32m\]\u@\h\[\033[01;34m\] \W\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
 
-#Share bash history between sessions and for example tmux
+# Share bash history between sessions and for example tmux
 shopt -s histappend
 shopt -s histreedit
 shopt -s histverify
 HISTCONTROL='ignoreboth'
 PROMPT_COMMAND="history -a;history -c;history -r; $PROMPT_COMMAND"
 
+# Azure CLI
 export PATH=$PATH:/Users/jarno/bin
-
 source '/Users/jarno/lib/azure-cli/az.completion'
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
