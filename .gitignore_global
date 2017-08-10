@@ -1,0 +1,8 @@
+# CTAGS source file
+tags
+
+# macOS
+.DS_Store
+.DS_Store?
+Thumbs.db
+

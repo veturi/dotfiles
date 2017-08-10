@@ -3,6 +3,11 @@ filetype plugin on
 filetype indent on
 syntax enable
 
+" complete tags in omnicomplete (html and such)
+:set omnifunc=htmlcomplete#CompleteTags
+" alternatively enable tag completion only in html filetypes
+" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+
 set cindent
 set sw=2
 set autoindent
@@ -63,6 +68,10 @@ au VimEnter * NERDTree " Auto open NERDTree
 au VimEnter * wincmd l " Target the actual file window upon opening
 
 " CtrlP
+" This settings disables version controlled folders to be from searched.
+" useful for example in projects with git submodules (submodule files not
+" visible in CtrlP results)
+" :let g:ctrlp_working_path_mode = 'ar'
 :let g:ctrlp_map ='<leader>t'
 :let g:ctrlp_cmd = 'CtrlP'
 :let g:ctrlp_match_window_bottom = 1
@@ -72,7 +81,7 @@ au VimEnter * wincmd l " Target the actual file window upon opening
 :let g:ctrlp_dotfiles = 0
 :let g:ctrlp_switch_buffer = 0
 :nmap <leader>e :CtrlPBuffer<CR>
-:nmap <leader>y :CtrlPMixed<CR>
+
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -84,9 +93,17 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_javascript_checkers = ['eslint']
+" Syntastic checkers
+"let g:syntastic_javascript_checkers = ['eslint']
 
+" Faster alias to toggle syntastic
 " command Sd SyntasticToggleMode
+
+" HTML5 omnicomplete
+let g:html5_event_handler_attributes_complete = 0
+let g:html5_rdfa_attributes_complete = 0
+let g:html5_microdata_attributes_complete = 0
+let g:html5_aria_attributes_complete = 0
 
 " Markdown
 let g:vim_markdown_folding_disabled=1

@@ -1,0 +1,6 @@
+# Install CTAGS for VIM tag support from Brew
+brew install ctags
+
+# Alias it as macOS already ships with some tuned down version
+alias ctags="`brew --prefix`/bin/ctags"
+

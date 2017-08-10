@@ -15,6 +15,11 @@ else
   alias gdiff='git diff | diff-so-fancy'
 fi
 
+# Alias CTAGS if installed from brew
+if [ -f /usr/local/bin/ctags ]; then
+  alias ctags="/usr/local/bin/ctags"
+fi
+
 # Disable Homebrew analytics
 export HOMEBREW_NO_ANALYTICS=1
 
