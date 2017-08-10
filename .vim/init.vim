@@ -1,36 +1,44 @@
+" Load plugins
+execute pathogen#infect()
+
+" Set Leader key
+:let mapleader = ","
+
 filetype on
 filetype plugin on
 filetype indent on
-syntax enable
 
-" complete tags in omnicomplete (html and such)
-:set omnifunc=htmlcomplete#CompleteTags
-" alternatively enable tag completion only in html filetypes
-" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+syntax enable " Active syntax hilighting
 
-set cindent
-set sw=2
-set autoindent
-
-set tabstop=2
-set expandtab
-
-" set ai "Auto indent
-" set si "Smart indent
-" set wrap "Wrap lines
-
-:let mapleader = ","
-
-nnoremap <F2> :set nonumber!<CR>
-
+""""""""" GENERAL SETS
+set title " Set the title of iTerm tab
 set showmatch
 set showcmd
 set ruler
-
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set cindent
+set sw=2
+set autoindent
+set tabstop=2
+set expandtab
+" set ai "Auto indent
+" set si "Smart indent
+" set wrap "Wrap lines
+
+"""""""" OMNICOMPLETE
+:set omnifunc=htmlcomplete#CompleteTags " Complete tags 
+" alternatively enable tag completion only in html filetypes 
+" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+
+"""""""" LINE NUMBERS
+" show line numbers by default
+:setlocal number 
+" use F2 to toggle line numbers
+nnoremap <F2> :set nonumber!<CR>
+
 
 set wildmode=longest,list
 
@@ -41,13 +49,10 @@ nnoremap <F9> :set list! list?<CR>
 :nmap <C-n> :bnext<CR>
 :nmap <C-p> :bprev<CR>
 
-execute pathogen#infect()
 
 :nmap j gj
 :nmap k gk
 
-:setlocal number " show line numbers by default
-:nmap \l :setlocal number!<CR>
 :nmap \o :set paste!<CR>
 :nmap \q :nohlsearch<CR>
 
