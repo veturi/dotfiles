@@ -1,5 +1,12 @@
+set nocompatible " hail VIM
+
 " Load plugins
 execute pathogen#infect()
+
+language en_US
+
+" fork here https://github.com/veturi/anderson.vim
+colorscheme anderson
 
 " Set Leader key
 :let mapleader = ","
@@ -10,56 +17,73 @@ filetype indent on
 
 syntax enable " Active syntax hilighting
 
-""""""""" GENERAL SETS
 set title " Set the title of iTerm tab
-set showmatch
-set showcmd
-set ruler
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set cindent
-set sw=2
-set autoindent
-set tabstop=2
-set expandtab
+set showmatch " briefly show matching bracket if on screen
+set ruler " show line and col nr
+set hlsearch " hilight search results
+set incsearch " incremental search results (search as you type)
+set ignorecase " ignore case when searching
+set smartcase " overrides ignorecase option if search string contains uppercase chars
+set cindent " c identing rules
+set autoindent " always use autoindenting 
+set copyindent " retain indentation level
+set shiftround " use multiples of shiftwidth when indenting with < & >
+set sw=2 " indent size (shiftwidth)
+set tabstop=2 " number of spaces a tab in the file counts for
+set expandtab " spaces, no tabs
+set hidden " hide buffers instead of closing them
+" set showcmd " show count of items in selection (chars, rows, lines*cols)
+" set mouse=a " enable cheatmode
 " set ai "Auto indent
 " set si "Smart indent
-" set wrap "Wrap lines
+" set wrap "Wrap lines (alternatively nowrap)
+" set nrformats= " treat all numbers as decimals
 
-"""""""" OMNICOMPLETE
-:set omnifunc=htmlcomplete#CompleteTags " Complete tags 
-" alternatively enable tag completion only in html filetypes 
-" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+" use w!! to open non-sudoed file as a sudo
+cmap w!! w !sudo tee % >/dev/null
 
-"""""""" LINE NUMBERS
-" show line numbers by default
-:setlocal number 
-" use F2 to toggle line numbers
-nnoremap <F2> :set nonumber!<CR>
+" terminal mode specific remap to use esc for escaping to normal mode (nvim)
+:tnoremap <Esc> <C-\><C-n>
 
+" wildmode for command autocompletion
+set wildmode=longest:list,full
 
-set wildmode=longest,list
-
+" toggle display of hidden characters and set options
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 nnoremap <F9> :set list! list?<CR>
 
-" Cycle between open buffers
+" Cycle between open buffers with
 :nmap <C-n> :bnext<CR>
 :nmap <C-p> :bprev<CR>
-
 
 :nmap j gj
 :nmap k gk
 
-:nmap \o :set paste!<CR>
-:nmap \q :nohlsearch<CR>
+" toggle paste mode
+:nmap <leader>o :set paste!<CR>
+set pastetoggle=<F10>
+
+" Paste from "0 register populated by yanks only
+nmap <leader>p "0p<CR>
+nmap <leader>P "0P<CR>
+
+" disable search hilight
+:nmap <leader>q :nohlsearch<CR>
 
 " split line from current position
 nnoremap K i<CR><ESC>
 
+:setlocal number " show line numbers by default
+" use F2 to toggle line numbers
+nnoremap <F2> :set nonumber!<CR>
+
+" close current buffer and switch to previous without closing window / split
+nmap <leader>d :b#<bar>bd#<CR>
+
+
+"********************************************
 " Split pane movement and configuration
+"********************************************
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -67,12 +91,37 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
+
+"********************************************
+" OMNICOMPLETE
+"********************************************
+:set omnifunc=htmlcomplete#CompleteTags " Complete tags 
+" alternatively enable tag completion only in html filetypes 
+" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+
+
+"********************************************
+" ALCHEMIST (elixir)
+"********************************************
+let g:alchemist_tag_disable = 1 " disable the half-assed version of ctags
+let g:alchemist_iex_term_size = 10 " alchemist iex term height in rows
+
+
+"********************************************
 " NERDTree
+"********************************************
 :nmap <leader>f :NERDTreeToggle<CR>
 au VimEnter * NERDTree " Auto open NERDTree
 au VimEnter * wincmd l " Target the actual file window upon opening
+" Focus to NERDTree viewport
+:nmap <leader>w :NERDTreeFocus<CR> 
+" Show file in NERDTree
+:nmap <leader>W :NERDTreeFind<CR> 
 
+
+"********************************************
 " CtrlP
+"********************************************
 " This settings disables version controlled folders to be from searched.
 " useful for example in projects with git submodules (submodule files not
 " visible in CtrlP results)
@@ -88,38 +137,39 @@ au VimEnter * wincmd l " Target the actual file window upon opening
 :nmap <leader>e :CtrlPBuffer<CR>
 
 
+"********************************************
 " Syntastic
+"********************************************
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-" Syntastic checkers
 "let g:syntastic_javascript_checkers = ['eslint']
-
 " Faster alias to toggle syntastic
 " command Sd SyntasticToggleMode
 
+
+"********************************************
 " HTML5 omnicomplete
+"********************************************
 let g:html5_event_handler_attributes_complete = 0
 let g:html5_rdfa_attributes_complete = 0
 let g:html5_microdata_attributes_complete = 0
 let g:html5_aria_attributes_complete = 0
 
+
+"********************************************
 " Markdown
+"********************************************
 let g:vim_markdown_folding_disabled=1
 
-" close current buffer and switch to previous without closing window / split
-nmap ,d :b#<bar>bd#<CR>
 
-language en_US
-
-set pastetoggle=<F10>
-
+"********************************************
+" Lightline
+"********************************************
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'component': {
@@ -129,5 +179,8 @@ let g:lightline = {
       \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
 
-colorscheme anderson
 
+"********************************************
+" MarkedToggle
+"********************************************
+nmap <leader>m :MarkedToggle!<CR>

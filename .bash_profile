@@ -34,6 +34,11 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+# Setup tmux bash completion
+if [ -f ~/.tmux-completion.bash ]; then
+  . ~/.tmux-completion.bash
+fi
+
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # Show git branch in prompt
