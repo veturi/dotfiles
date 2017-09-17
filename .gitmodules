@@ -1,0 +1,6 @@
+[submodule ".vim/bundle/alchemist-vim"]
+	path = .vim/bundle/alchemist-vim
+	url = git@github.com:slashmili/alchemist.vim.git
+[submodule ".vim/bundle/ctrlp-vim"]
+	path = .vim/bundle/ctrlp-vim
+	url = git@github.com:kien/ctrlp.vim.git
