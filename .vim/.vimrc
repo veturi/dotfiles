@@ -95,3 +95,5 @@ nmap ,d :b#<bar>bd#<CR>
 
 set pastetoggle=<F10>
 
+" Disable polyglot ELM plugin
+let g:polyglot_disabled = ['elm']
