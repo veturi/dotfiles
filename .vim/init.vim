@@ -1,7 +1,29 @@
 set nocompatible " hail VIM
 
-" Load plugins
-execute pathogen#infect()
+" Load Plug and plugins
+if has('nvim') && empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+elseif empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/bundle')
+Plug 'slashmili/alchemist.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-syntastic/syntastic'
+Plug 'itspriddle/vim-marked'
+Plug 'veturi/elm-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'mattreduce/vim-mix'
+Plug 'tpope/vim-surround'
+call plug#end()
 
 language en_US
 
@@ -184,3 +206,12 @@ let g:lightline = {
 " MarkedToggle
 "********************************************
 nmap <leader>m :MarkedToggle!<CR>
+
+
+"********************************************
+" Vim ELM
+"********************************************
+let g:elm_setup_keybindings = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:elm_syntastic_show_warnings = 1
