@@ -12,7 +12,6 @@ elseif empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
-Plug 'slashmili/alchemist.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
@@ -23,7 +22,21 @@ Plug 'veturi/elm-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattreduce/vim-mix'
 Plug 'tpope/vim-surround'
+
+Plug 'neomake/neomake'
+autocmd! BufWritePost * Neomake
+
+" Elixir plugins
+Plug 'slashmili/alchemist.vim'
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
+let g:deoplete#enable_at_startup = 1
+" let g:deoplete#disable_auto_complete = 1
+
 call plug#end()
+
 
 language en_US
 
@@ -125,8 +138,8 @@ set splitright
 "********************************************
 " ALCHEMIST (elixir)
 "********************************************
-let g:alchemist_tag_disable = 1 " disable the half-assed version of ctags
-let g:alchemist_iex_term_size = 10 " alchemist iex term height in rows
+" let g:alchemist_tag_disable = 1 " disable the half-assed version of ctags
+" let g:alchemist_iex_term_size = 10 " alchemist iex term height in rows
 
 
 "********************************************
