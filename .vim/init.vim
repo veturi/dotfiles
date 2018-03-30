@@ -12,6 +12,7 @@ elseif empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
+Plug 'osyo-manga/vim-over'
 Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
@@ -22,6 +23,7 @@ Plug 'veturi/elm-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattreduce/vim-mix'
 Plug 'tpope/vim-surround'
+Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'neomake/neomake'
 autocmd! BufWritePost * Neomake
