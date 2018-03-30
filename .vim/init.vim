@@ -23,7 +23,7 @@ Plug 'veturi/elm-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattreduce/vim-mix'
 Plug 'tpope/vim-surround'
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'neomake/neomake'
 autocmd! BufWritePost * Neomake
