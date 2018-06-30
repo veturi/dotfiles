@@ -1,59 +1,10 @@
-set nocompatible " hail VIM
-
-set background=dark
-" set termguicolors
-
-" Load Plug and plugins
-if has('nvim') && empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-elseif empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin('~/.vim/bundle')
-Plug 'osyo-manga/vim-over'
-Plug 'kien/ctrlp.vim'
-Plug 'mattn/emmet-vim'
-Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'vim-syntastic/syntastic'
-Plug 'itspriddle/vim-marked'
-Plug 'veturi/elm-vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'mattreduce/vim-mix'
-Plug 'tpope/vim-surround'
-" Plug 'ludovicchabant/vim-gutentags'
-
-Plug 'neomake/neomake'
-autocmd! BufWritePost * Neomake
-
-" Elixir plugins
-Plug 'slashmili/alchemist.vim'
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-endif
-let g:deoplete#enable_at_startup = 1
-" let g:deoplete#disable_auto_complete = 1
-
-" colorscheme from https://github.com/morhetz/gruvbox
-Plug 'morhetz/gruvbox'
-
-call plug#end()
-
-
+"********************************************
+" General settings and such
+"********************************************
+set nocompatible
 language en_US
 
-" fork here https://github.com/veturi/anderson.vim
-" colorscheme anderson
-colorscheme gruvbox
-
-" Set Leader key
-:let mapleader = ","
+:let mapleader = "," "set leader key
 
 filetype on
 filetype plugin on
@@ -76,13 +27,71 @@ set sw=2 " indent size (shiftwidth)
 set tabstop=2 " number of spaces a tab in the file counts for
 set expandtab " spaces, no tabs
 set hidden " hide buffers instead of closing them
-" set showcmd " show count of items in selection (chars, rows, lines*cols)
-" set mouse=a " enable cheatmode
 " set ai "Auto indent
 " set si "Smart indent
 " set wrap "Wrap lines (alternatively nowrap)
 " set nrformats= " treat all numbers as decimals
 
+
+"********************************************
+" Load PLUG plugin manager and Plugins
+"********************************************
+if has('nvim') && empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+elseif empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/bundle')
+Plug 'osyo-manga/vim-over'
+Plug 'kien/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-syntastic/syntastic'
+Plug 'itspriddle/vim-marked'
+Plug 'veturi/elm-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'mattreduce/vim-mix'
+Plug 'tpope/vim-surround'
+
+Plug 'neomake/neomake'
+autocmd! BufWritePost * Neomake
+
+Plug 'slashmili/alchemist.vim' "Elixir plugins
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
+let g:deoplete#enable_at_startup = 1
+
+Plug 'morhetz/gruvbox' "colorscheme from https://github.com/morhetz/gruvbox
+
+call plug#end()
+
+
+"********************************************
+" Theming
+"********************************************
+" Enable true colors in iTerm2
+if $TERM_PROGRAM == "iTerm.app"
+	set termguicolors
+endif
+
+set background=dark
+
+" fork here https://github.com/veturi/anderson.vim
+" colorscheme anderson
+colorscheme gruvbox
+
+
+"********************************************
+" Custom bindings and something random
+"********************************************
 " use w!! to open non-sudoed file as a sudo
 cmap w!! w !sudo tee % >/dev/null
 
