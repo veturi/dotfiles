@@ -58,6 +58,8 @@ Plug 'veturi/elm-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattreduce/vim-mix'
 Plug 'tpope/vim-surround'
+" Plug 'w0rp/ale' "Better linter https://github.com/w0rp/ale
+" Plug 'junegunn/fzf' "Fuzzy finder https://github.com/junegunn/fzf/
 
 Plug 'neomake/neomake'
 autocmd! BufWritePost * Neomake
