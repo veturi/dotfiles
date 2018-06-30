@@ -1,5 +1,8 @@
 set nocompatible " hail VIM
 
+set background=dark
+set termguicolors
+
 " Load Plug and plugins
 if has('nvim') && empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -37,13 +40,17 @@ endif
 let g:deoplete#enable_at_startup = 1
 " let g:deoplete#disable_auto_complete = 1
 
+" colorscheme from https://github.com/morhetz/gruvbox
+Plug 'morhetz/gruvbox'
+
 call plug#end()
 
 
 language en_US
 
 " fork here https://github.com/veturi/anderson.vim
-colorscheme anderson
+" colorscheme anderson
+colorscheme gruvbox
 
 " Set Leader key
 :let mapleader = ","
@@ -142,6 +149,9 @@ set splitright
 "********************************************
 " let g:alchemist_tag_disable = 1 " disable the half-assed version of ctags
 " let g:alchemist_iex_term_size = 10 " alchemist iex term height in rows
+" let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
+" note: below should be done only for elixir files
+map <C-5> :ExDef<CR>
 
 
 "********************************************

@@ -8,13 +8,6 @@ else
   alias vim='nvim'
 fi
 
-# Fancier git diff. Requires diff-so-fancy from NPM
-if ! type "diff-so-fancy" &> /dev/null; then
-  echo "diff-so-fancy not installed from NPM. gdiff alias not available."
-else
-  alias gdiff='git diff | diff-so-fancy'
-fi
-
 # Alias CTAGS if installed from brew
 if [ -f /usr/local/bin/ctags ]; then
   alias ctags="/usr/local/bin/ctags"
@@ -56,11 +49,9 @@ shopt -s histverify
 HISTCONTROL='ignoreboth'
 PROMPT_COMMAND="history -a;history -c;history -r; $PROMPT_COMMAND"
 
-# Azure CLI auto complete and path
-export PATH=$PATH:/Users/jarno/bin
-source '/Users/jarno/lib/azure-cli/az.completion'
-
 # NVM for Node
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
