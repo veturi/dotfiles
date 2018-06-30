@@ -1,7 +1,7 @@
 set nocompatible " hail VIM
 
 set background=dark
-set termguicolors
+" set termguicolors
 
 " Load Plug and plugins
 if has('nvim') && empty(glob('~/.config/nvim/autoload/plug.vim'))
