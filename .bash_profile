@@ -1,12 +1,16 @@
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
-# Use Neovim by default
+# Use Neovim by default. Fallback to vim
 if ! type "nvim" &> /dev/null; then
+  export VISUAL=vim
   echo "Neovim not installed. Using regular VIM. Configuration propably messed up."
 else
   alias vim='nvim'
+  export VISUAL=nvim
 fi
+
+export EDITOR="$VISUAL"
 
 # Alias CTAGS if installed from brew
 if [ -f /usr/local/bin/ctags ]; then
@@ -15,10 +19,6 @@ fi
 
 # Disable Homebrew analytics
 export HOMEBREW_NO_ANALYTICS=1
-
-# Set default editor
-export VISUAL=vim
-export EDITOR="$VISUAL"
 
 alias tmux="TERM=screen-256color-bce tmux"
 
