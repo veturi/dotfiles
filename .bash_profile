@@ -46,6 +46,8 @@ fi
 shopt -s histappend
 shopt -s histreedit
 shopt -s histverify
+export HISTFILESIZE=10000
+export HISTSIZE=10000
 HISTCONTROL='ignoreboth'
 PROMPT_COMMAND="history -a;history -c;history -r; $PROMPT_COMMAND"
 
