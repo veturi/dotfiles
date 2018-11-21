@@ -23,8 +23,8 @@ set cindent " c identing rules
 set autoindent " always use autoindenting 
 set copyindent " retain indentation level
 set shiftround " use multiples of shiftwidth when indenting with < & >
-set sw=2 " indent size (shiftwidth)
-set tabstop=2 " number of spaces a tab in the file counts for
+set sw=3 " indent size (shiftwidth)
+set tabstop=3 " number of spaces a tab in the file counts for
 set expandtab " spaces, no tabs
 set hidden " hide buffers instead of closing them
 " set ai "Auto indent
