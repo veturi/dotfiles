@@ -76,6 +76,9 @@ Plug 'morhetz/gruvbox' "colorscheme from https://github.com/morhetz/gruvbox
 
 call plug#end()
 
+" Fix issues with some VUE components not properly syntax hilighted
+autocmd FileType vue syntax sync fromstart
+
 
 "********************************************
 " Theming
