@@ -6,6 +6,17 @@
 # ln -sfv "$DOTFILES_DIR/runcom/.gemrc" ~
 # ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
 # ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
+apps=(
+   "Magnet",
+   "BetterTouchTool",
+   "1Password",
+   "Dropbox",
+   "Docker",
+   "Karabiner elements",
+   "Flux"
+)
+
+echo "${apps[@]}"
 
 echo "Remember to install essentials from AppStore:"
 echo " - Magnet"
