@@ -74,6 +74,9 @@ let g:deoplete#enable_at_startup = 1
 
 Plug 'morhetz/gruvbox' "colorscheme from https://github.com/morhetz/gruvbox
 
+" PSQL syntax hilighting
+Plug 'lifepillar/pgsql.vim'
+
 call plug#end()
 
 " Fix issues with some VUE components not properly syntax hilighted
@@ -255,3 +258,10 @@ let g:elm_setup_keybindings = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:elm_syntastic_show_warnings = 1
+
+"********************************************
+" Vim PSQL
+" https://github.com/lifepillar/pgsql.vim
+"********************************************
+" by default treat .sql files with postgres syntax hilighting
+let g:sql_type_default = 'pgsql'
