@@ -32,3 +32,6 @@ echo "brew install python2"
 echo "brew install python3"
 echo "pip2 install neovim"
 echo "pip3 install neovim"
+
+echo "other brew packages to install:"
+echo "lazydocker - (https://github.com/jesseduffield/lazydocker)"
