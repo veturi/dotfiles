@@ -63,6 +63,7 @@ Plug 'ekalinin/Dockerfile.vim'
 " Plug 'junegunn/fzf' "Fuzzy finder https://github.com/junegunn/fzf/
 
 Plug 'neomake/neomake'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 autocmd! BufWritePost * Neomake
 
 Plug 'slashmili/alchemist.vim' "Elixir plugins
@@ -265,3 +266,7 @@ let g:elm_syntastic_show_warnings = 1
 "********************************************
 " by default treat .sql files with postgres syntax hilighting
 let g:sql_type_default = 'pgsql'
+
+"********************************************
+" nvim coc
+"********************************************
