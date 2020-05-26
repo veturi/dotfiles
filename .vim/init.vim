@@ -59,6 +59,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mattreduce/vim-mix'
 Plug 'tpope/vim-surround'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plug 'w0rp/ale' "Better linter https://github.com/w0rp/ale
 " Plug 'junegunn/fzf' "Fuzzy finder https://github.com/junegunn/fzf/
 
@@ -68,10 +69,10 @@ autocmd! BufWritePost * Neomake
 
 Plug 'slashmili/alchemist.vim' "Elixir plugins
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-endif
-let g:deoplete#enable_at_startup = 1
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" endif
+" let g:deoplete#enable_at_startup = 1
 
 Plug 'morhetz/gruvbox' "colorscheme from https://github.com/morhetz/gruvbox
 
@@ -253,19 +254,12 @@ nmap <leader>m :MarkedToggle!<CR>
 
 
 "********************************************
-" Vim ELM
-"********************************************
-let g:elm_setup_keybindings = 0
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:elm_syntastic_show_warnings = 1
-
-"********************************************
 " Vim PSQL
 " https://github.com/lifepillar/pgsql.vim
 "********************************************
 " by default treat .sql files with postgres syntax hilighting
 let g:sql_type_default = 'pgsql'
+
 
 "********************************************
 " nvim coc

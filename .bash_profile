@@ -62,3 +62,10 @@ export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 export PATH=/usr/local/opt/python/bin:$PATH
 
 export LC_ALL=fi_FI.UTF-8
+alias excel='open -a Microsoft\ Excel'
+
+### GO ###
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
