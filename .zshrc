@@ -101,6 +101,8 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias excel="open -a Microsoft\ Excel"
 
 # Disable autocomplete of hostnames for ssh command
 zstyle ':completion:*:ssh:*' hosts off
+
