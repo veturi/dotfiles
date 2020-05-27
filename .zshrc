@@ -72,6 +72,7 @@ plugins=(
    git
    colored-man-pages
    mix
+   z
 )
 
 source $ZSH/oh-my-zsh.sh
