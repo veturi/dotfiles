@@ -103,6 +103,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias excel="open -a Microsoft\ Excel"
+alias vim="nvim"
 
 # Disable autocomplete of hostnames for ssh command
 zstyle ':completion:*:ssh:*' hosts off
