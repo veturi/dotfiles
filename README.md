@@ -13,6 +13,7 @@ TODO: Write script to do this. Documenting the process here from my new macbook
 9. Symlink global gitignore
 10. Add FZF from homebrew
 11. Enable FZF shell extensions from /usr/local/opt/fzf/install
+12. Install AG from brew (for better FZF file ignore control)
 
 # BASH ENVIRONMENTS
 

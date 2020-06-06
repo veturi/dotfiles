@@ -9,3 +9,9 @@ Thumbs.db
 .hex
 
 node_modules
+
+/_build
+/deps
+/.fetch
+*.ez
+*.beam
