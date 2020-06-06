@@ -1,4 +1,4 @@
-# NVM ENVIRONMENTS
+# ZSH ENVIRONMENTS
 
 TODO: Write script to do this. Documenting the process here from my new macbook
 
@@ -11,7 +11,8 @@ TODO: Write script to do this. Documenting the process here from my new macbook
 7. Symlink nvim init as vimrc config (for fallback)
 8. Install iTerm and setup iTerm profile
 9. Symlink global gitignore
-
+10. Add FZF from homebrew
+11. Enable FZF shell extensions from /usr/local/opt/fzf/install
 
 # BASH ENVIRONMENTS
 
