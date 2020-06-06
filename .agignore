@@ -30,3 +30,13 @@ NuGet/*
 .nuget
 
 .gem
+.npm
+.azure
+.cache
+go/pkg
+
+.node-gyp
+.omnisharp
+.oh-my-zsh
+
+*.dll

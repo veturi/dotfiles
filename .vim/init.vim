@@ -31,7 +31,7 @@ set hidden " hide buffers instead of closing them
 " set si "Smart indent
 " set wrap "Wrap lines (alternatively nowrap)
 " set nrformats= " treat all numbers as decimals
-
+set noswapfile
 
 "********************************************
 " Load PLUG plugin manager and Plugins
@@ -48,7 +48,7 @@ endif
 
 call plug#begin('~/.vim/bundle')
 Plug 'osyo-manga/vim-over'
-Plug 'kien/ctrlp.vim'
+" Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
@@ -61,7 +61,6 @@ Plug 'tpope/vim-surround'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plug 'w0rp/ale' "Better linter https://github.com/w0rp/ale
-" Plug 'junegunn/fzf' "Fuzzy finder https://github.com/junegunn/fzf/
 
 Plug 'neomake/neomake'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -78,6 +77,10 @@ Plug 'morhetz/gruvbox' "colorscheme from https://github.com/morhetz/gruvbox
 
 " PSQL syntax hilighting
 Plug 'lifepillar/pgsql.vim'
+
+" FZF
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -272,3 +275,28 @@ let g:sql_type_default = 'pgsql'
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR> 
 
+
+"********************************************
+" FZF
+"********************************************
+" Sets colorscheme to match VIM color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" CTRL T, CTRL X and CTRL V split from FZF results
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
