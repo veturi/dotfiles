@@ -108,3 +108,5 @@ alias vim="nvim"
 # Disable autocomplete of hostnames for ssh command
 zstyle ':completion:*:ssh:*' hosts off
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
