@@ -73,6 +73,7 @@ plugins=(
    colored-man-pages
    mix
    z
+   # fzf
 )
 
 source $ZSH/oh-my-zsh.sh
