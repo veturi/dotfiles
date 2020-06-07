@@ -196,15 +196,15 @@ au VimEnter * wincmd l " Target the actual file window upon opening
 " useful for example in projects with git submodules (submodule files not
 " visible in CtrlP results)
 " :let g:ctrlp_working_path_mode = 'ar'
-:let g:ctrlp_map ='<leader>t'
-:let g:ctrlp_cmd = 'CtrlP'
-:let g:ctrlp_match_window_bottom = 1
-:let g:ctrlp_match_window_reversed = 1
-:let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend|jpeg|jpg|png|gif)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-:let g:ctrlp_working_path_mode = 0
-:let g:ctrlp_dotfiles = 0
-:let g:ctrlp_switch_buffer = 0
-:nmap <leader>e :CtrlPBuffer<CR>
+" :let g:ctrlp_map ='<leader>t'
+" :let g:ctrlp_cmd = 'CtrlP'
+" :let g:ctrlp_match_window_bottom = 1
+" :let g:ctrlp_match_window_reversed = 1
+" :let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend|jpeg|jpg|png|gif)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+" :let g:ctrlp_working_path_mode = 0
+" :let g:ctrlp_dotfiles = 0
+" :let g:ctrlp_switch_buffer = 0
+" :nmap <leader>e :CtrlPBuffer<CR>
 
 
 "********************************************
@@ -300,3 +300,10 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
+
+nnoremap <leader>e :Buffers<CR>
+nnoremap <leader>E :Lines<CR>
+nnoremap <leader>t :Files<CR>
+nnoremap <leader>T :GFiles<CR>
+nnoremap <leader>r :History:<CR>
+nnoremap <leader>R :History/<CR>
