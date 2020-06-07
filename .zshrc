@@ -112,6 +112,7 @@ zstyle ':completion:*:ssh:*' hosts off
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--reverse --multi --height 50% -1 --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap' --bind='f3:execute(bat --style=numbers {} || less -f {}),f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echo {+} | pbcopy)'"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
