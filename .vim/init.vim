@@ -180,13 +180,13 @@ map <C-5> :ExDef<CR>
 "********************************************
 " NERDTree
 "********************************************
-:nmap <leader>f :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeToggle<CR>
 au VimEnter * NERDTree " Auto open NERDTree
 au VimEnter * wincmd l " Target the actual file window upon opening
 " Focus to NERDTree viewport
-:nmap <leader>w :NERDTreeFocus<CR> 
+nmap <leader>w :NERDTreeFocus<CR> 
 " Show file in NERDTree
-:nmap <leader>W :NERDTreeFind<CR> 
+nmap <leader>W :NERDTreeFind<CR> 
 
 
 "********************************************
