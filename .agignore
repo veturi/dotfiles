@@ -40,3 +40,5 @@ go/pkg
 .oh-my-zsh
 
 *.dll
+
+.Trash

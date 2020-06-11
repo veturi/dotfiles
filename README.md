@@ -15,6 +15,7 @@ TODO: Write script to do this. Documenting the process here from my new macbook
 11. Enable FZF shell extensions from /usr/local/opt/fzf/install
 12. Install AG from brew (for better FZF file ignore control)
 13. Install BAT from brew for syntax hilighting in FZF preview pane
+14. Install TMUX Resurrect plugin to ~/.config/tmux/tmux-resurrect (https://github.com/tmux-plugins/tmux-resurrect)
 
 # BASH ENVIRONMENTS
 
