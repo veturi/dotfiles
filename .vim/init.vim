@@ -60,6 +60,7 @@ Plug 'mattreduce/vim-mix'
 Plug 'tpope/vim-surround'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'tpope/vim-obsession'
 " Plug 'w0rp/ale' "Better linter https://github.com/w0rp/ale
 
 Plug 'neomake/neomake'
