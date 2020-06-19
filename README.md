@@ -30,3 +30,6 @@ $TERM.ti -file to ~/.$TERM.ti and call it in .profile with 'tic .$TERM.ti' to ge
 issue described here:
 https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
 
+
+# MACOS General settings and stuff
+- Turn off font smoothing from "System Preferences -> General"
