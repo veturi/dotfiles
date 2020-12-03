@@ -61,6 +61,9 @@ Plug 'tpope/vim-surround'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-obsession'
+Plug 'mtth/scratch.vim'
+Plug 'kshenoy/vim-signature'
+
 " Plug 'w0rp/ale' "Better linter https://github.com/w0rp/ale
 
 Plug 'neomake/neomake'
@@ -82,6 +85,14 @@ Plug 'lifepillar/pgsql.vim'
 " FZF
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+
+" For testing at a later date
+" Plug 'svermeulen/vim-cutlass' " Overrides deletions to just delete and not
+" replace yank buffers
+" Plug 'svermeulen/vim-yoink' " Adds possibility to choose a buffer when
+" pasting
+" Plug 'svermeulen/vim-subversive' " Providers new operators to perform quick
+" substitutions
 
 call plug#end()
 
