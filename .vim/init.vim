@@ -86,10 +86,13 @@ Plug 'lifepillar/pgsql.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
+" C# and dotnet
+Plug 'OmniSharp/omnisharp-vim'
+
 " For testing at a later date
-" Plug 'svermeulen/vim-cutlass' " Overrides deletions to just delete and not
+Plug 'svermeulen/vim-cutlass' " Overrides deletions to just delete and not
 " replace yank buffers
-" Plug 'svermeulen/vim-yoink' " Adds possibility to choose a buffer when
+Plug 'svermeulen/vim-yoink' " Adds possibility to choose a buffer when
 " pasting
 " Plug 'svermeulen/vim-subversive' " Providers new operators to perform quick
 " substitutions
@@ -280,6 +283,14 @@ let g:sql_type_default = 'pgsql'
 " nvim coc
 "********************************************
 
+"********************************************
+" yoink
+"********************************************
+let g:yoinkIncludeDeleteOperations = 1
+"nmap <C-K> <plug>(YoinkPostPasteSwapBack)
+"nmap <C-J> <plug>(YoinkPostPasteSwapForward)
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
 
 "********************************************
 " vim tabs

@@ -79,6 +79,7 @@ plugins=(
    mix
    z
    dotnet
+   asdf
    # fzf
 )
 
