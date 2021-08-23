@@ -54,7 +54,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-syntastic/syntastic'
 Plug 'itspriddle/vim-marked'
-Plug 'veturi/elm-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattreduce/vim-mix'
 Plug 'tpope/vim-surround'
@@ -69,6 +68,9 @@ Plug 'kshenoy/vim-signature'
 Plug 'neomake/neomake'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 autocmd! BufWritePost * Neomake
+
+" Dadbod for database integration
+Plug 'tpope/vim-dadbod'
 
 Plug 'slashmili/alchemist.vim' "Elixir plugins
 
