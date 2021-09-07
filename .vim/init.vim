@@ -62,6 +62,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-obsession'
 Plug 'mtth/scratch.vim'
 Plug 'kshenoy/vim-signature'
+Plug 'elixir-editors/vim-elixir'
 
 " Plug 'w0rp/ale' "Better linter https://github.com/w0rp/ale
 
