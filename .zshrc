@@ -134,3 +134,4 @@ alias python=/usr/local/bin/python3
 export PATH="/opt/homebrew/bin:$PATH"
 
 alias gpom="git pull origin master"
+alias gpuom="git push origin master"
