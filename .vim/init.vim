@@ -373,3 +373,4 @@ nnoremap <leader>t :Files<CR>
 nnoremap <leader>T :GFiles<CR>
 nnoremap <leader>r :History:<CR>
 nnoremap <leader>R :History/<CR>
+nnoremap <leader>y :Ag<CR>
