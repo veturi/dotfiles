@@ -193,6 +193,14 @@ map <C-5> :ExDef<CR>
 
 
 "********************************************
+" NEOMAKE 
+"********************************************
+" note: below should be done only for elixir files
+let g:neomake_elixir_enabled_makers = ['credo']
+autocmd! BufWritePost * Neomake
+
+
+"********************************************
 " NERDTree
 "********************************************
 nmap <leader>f :NERDTreeToggle<CR>
