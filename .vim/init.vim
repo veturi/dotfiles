@@ -54,7 +54,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-syntastic/syntastic'
 Plug 'itspriddle/vim-marked'
-Plug 'veturi/elm-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattreduce/vim-mix'
 Plug 'tpope/vim-surround'
@@ -63,12 +62,16 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-obsession'
 Plug 'mtth/scratch.vim'
 Plug 'kshenoy/vim-signature'
+Plug 'elixir-editors/vim-elixir'
 
 " Plug 'w0rp/ale' "Better linter https://github.com/w0rp/ale
 
 Plug 'neomake/neomake'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 autocmd! BufWritePost * Neomake
+
+" Dadbod for database integration
+Plug 'tpope/vim-dadbod'
 
 Plug 'slashmili/alchemist.vim' "Elixir plugins
 

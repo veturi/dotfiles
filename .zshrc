@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jarnotikka/.oh-my-zsh"
+export ZSH="/Users/jarno/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -135,3 +135,4 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 # GIT aliases
 alias gpom="git pull origin master"
+alias gpuom="git push origin master"
