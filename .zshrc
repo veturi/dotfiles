@@ -133,5 +133,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 alias python=/usr/local/bin/python3
 export PATH="/opt/homebrew/bin:$PATH"
 
+# GIT aliases
 alias gpom="git pull origin master"
 alias gpuom="git push origin master"
