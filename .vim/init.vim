@@ -63,6 +63,7 @@ Plug 'tpope/vim-obsession'
 Plug 'mtth/scratch.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'elixir-editors/vim-elixir'
+Plug 'vim-test/vim-test'
 
 " Plug 'w0rp/ale' "Better linter https://github.com/w0rp/ale
 
@@ -352,6 +353,17 @@ nmap P <plug>(YoinkPaste_P)
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR> 
 
+"********************************************
+" VIM-TEST
+"********************************************
+" Setup neovim mode for tests to avoid using tabs
+let test#strategy = "neovim"
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+nmap <silent> t<C-v> :TestVisit<CR>
 
 "********************************************
 " FZF
