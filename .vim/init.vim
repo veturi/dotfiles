@@ -334,6 +334,9 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" Show file outline with leader-c-o
+nnoremap <silent> <leader>co :<C-u>CocList outline<CR>
+
 "********************************************
 " yoink
 "********************************************
