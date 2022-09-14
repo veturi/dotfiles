@@ -36,3 +36,13 @@ https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
 
 # MACOS General settings and stuff
 - Turn off font smoothing from "System Preferences -> General"
+
+
+# Logitech Litra Glow lights on elgato stream deck
+1. Plug in streaming lights to USB ports
+2. Copy dotfiles/zsh/custom/aliases.zsh to ~/.oh-my-zsh/custom/aliases.zsh
+3. build hidapitester from source to get the latest version and copy to /usr/local/bin to include binary automatically to path. More information in ZSH aliases file
+4. Now you can execute litra_<optionhere> aliases from the command line
+5. Create MacOS Shortcut for terminal app and execute the relevant command:
+   5.1 example script: "source /Users/jarno/.oh-my-zsh/custom/aliases.zsh && litra_off"
+6. You can now include the MacOS shortcuts to Elgato stream deck and avoid installing Logitech GHub which is 120% dickballs
