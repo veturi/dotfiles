@@ -31,3 +31,4 @@ echo "pip3 install neovim"
 
 echo "other brew packages to install:"
 echo "lazydocker - (https://github.com/jesseduffield/lazydocker)"
+echo "alt-tab - https://alt-tab-macos.netlify.app/"
