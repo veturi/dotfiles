@@ -64,7 +64,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt SHARE_HISTORY
 
-
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -136,3 +135,11 @@ export PATH="/opt/homebrew/bin:$PATH"
 # GIT aliases
 alias gpom="git pull origin master"
 alias gpuom="git push origin master"
+
+# Azure CLI Completion
+autoload bashcompinit && bashcompinit
+source /opt/homebrew/Cellar/azure-cli/2.46.0/etc/bash_completion.d/az
+
+# 1Password CLI completion
+eval "$(op completion zsh)"; compdef _op op
+
