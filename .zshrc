@@ -129,7 +129,9 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-alias python=/usr/local/bin/python3
+#alias python=/usr/local/bin/python3
+alias python=/opt/homebrew/bin/python3
+alias pip=/opt/homebrew/bin/pip3
 export PATH="/opt/homebrew/bin:$PATH"
 
 # GIT aliases
@@ -140,6 +142,6 @@ alias gpuom="git push origin master"
 autoload bashcompinit && bashcompinit
 source /opt/homebrew/Cellar/azure-cli/2.46.0/etc/bash_completion.d/az
 
-# 1Password CLI completion
-eval "$(op completion zsh)"; compdef _op op
+# PSQL tools
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 

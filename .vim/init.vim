@@ -101,6 +101,9 @@ Plug 'svermeulen/vim-yoink' " Adds possibility to choose a buffer when
 " Plug 'svermeulen/vim-subversive' " Providers new operators to perform quick
 " substitutions
 
+" Github Copilot
+Plug 'github/copilot.vim'
+
 call plug#end()
 
 " Fix issues with some VUE components not properly syntax hilighted
