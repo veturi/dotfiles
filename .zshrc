@@ -77,8 +77,8 @@ plugins=(
    colored-man-pages
    mix
    z
-   dotnet
-   asdf
+   # dotnet
+   # asdf
    # fzf
 )
 
@@ -142,6 +142,7 @@ export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 # Requires pyenv and pyenv-virtualenv from brew
 eval "$(pyenv init -)"
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Set python3 as default
 alias python=/usr/local/bin/python3
