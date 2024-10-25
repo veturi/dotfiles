@@ -129,19 +129,19 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-#alias python=/usr/local/bin/python3
-alias python=/opt/homebrew/bin/python3
-alias pip=/opt/homebrew/bin/pip3
 export PATH="/opt/homebrew/bin:$PATH"
 
 # GIT aliases
 alias gpom="git pull origin master"
 alias gpuom="git push origin master"
 
-# Azure CLI Completion
-autoload bashcompinit && bashcompinit
-source /opt/homebrew/Cellar/azure-cli/2.46.0/etc/bash_completion.d/az
-
-# PSQL tools
+# PostgreSQL 15 tools (not included in Brew keg). PSQL Tools
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
+# Python setup
+# Requires pyenv and pyenv-virtualenv from brew
+eval "$(pyenv init -)"
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+# Set python3 as default
+alias python=/usr/local/bin/python3
