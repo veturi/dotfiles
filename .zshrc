@@ -138,11 +138,6 @@ alias gpuom="git push origin master"
 # PostgreSQL 15 tools (not included in Brew keg). PSQL Tools
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
-# Python setup
-# Requires pyenv and pyenv-virtualenv from brew
-eval "$(pyenv init -)"
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# ASDF shims directory
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
-# Set python3 as default
-alias python=/usr/local/bin/python3
