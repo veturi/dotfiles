@@ -148,10 +148,6 @@ nnoremap <F9> :set list! list?<CR>
 :nmap j gj
 :nmap k gk
 
-" toggle paste mode
-" :nmap <leader>o :set paste!<CR>
-" set pastetoggle=<F10>
-
 " Paste from "0 register populated by yanks only
 nmap <leader>p "0p<CR>
 nmap <leader>P "0P<CR>
@@ -400,3 +396,8 @@ nnoremap <leader>T :GFiles<CR>
 nnoremap <leader>r :History:<CR>
 nnoremap <leader>R :History/<CR>
 nnoremap <leader>y :Ag<CR>
+
+" toggle paste mode
+" :nmap <leader>o :set paste!<CR>
+" set pastetoggle=<F10>
+

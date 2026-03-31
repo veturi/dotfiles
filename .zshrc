@@ -142,4 +142,10 @@ export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 export PATH="$HOME/.config/herd-lite/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/jarno/.antigravity/antigravity/bin:$PATH"
+
+# Claude
+alias yolo="claude --dangerously-skip-permissions"
 export PATH="$HOME/.local/bin:$PATH"
