@@ -149,3 +149,6 @@ export PATH="/Users/jarno/.antigravity/antigravity/bin:$PATH"
 # Claude
 alias yolo="claude --dangerously-skip-permissions"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Go bin
+export PATH="$HOME/go/bin:$PATH"
