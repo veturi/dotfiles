@@ -1,0 +1,18 @@
+#!/bin/bash
+
+options=(
+	width=4.0
+	hidpi=on
+	
+	# Sky blue
+	active_color=0xff4ADDFF
+	
+	# Shell pink 
+	# active_color=0xffFFA1A0
+	
+	# # Vibrant purple
+	# active_color=0xffC828FF
+)
+
+borders "${options[@]}"
+
