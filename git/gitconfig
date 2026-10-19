@@ -1,0 +1,11 @@
+[user]
+	name = Jarno Tikka
+	email = jarno.tikka@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = nvim
+[push]
+	autoSetupRemote = true
+# Machine specific overrides (e.g. work email), not in git
+[include]
+	path = ~/.gitconfig.local

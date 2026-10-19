@@ -1,0 +1,21 @@
+# Global ignores for fd (fzf file search). Mostly matters when searching from ~
+.git
+Library
+Music
+Movies
+Pictures
+.Trash
+.cache
+.npm
+.gem
+.cargo
+.rustup
+.oh-my-zsh
+node_modules
+_build
+deps
+.elixir_ls
+.expert
+.hex
+.mix
+go/pkg

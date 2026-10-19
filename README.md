@@ -1,48 +1,70 @@
-# ZSH ENVIRONMENTS
+# dotfiles
 
-TODO: Write script to do this. Documenting the process here from my new macbook
+macOS (Apple silicon) setup. Elixir first, zsh + oh-my-zsh, neovim locally / vim on remote hosts,
+iTerm2 (Ghostty on trial), herdr with tmux as fallback, Rectangle for windows.
 
-1. Install oh-my-zsh
-2. Symlink .zshrc from dotfiles (oh-my-zsh creates a new one and backups your old)
-3. Install homebrew
-4. Install tmux & vim from homebrew
-5. Symlink tmux config
-6. Symlink nvim config
-7. Symlink nvim init as vimrc config (for fallback)
-8. Install iTerm and setup iTerm profile
-9. Symlink global gitignore
-10. Add FZF from homebrew
-11. Enable FZF shell extensions from /usr/local/opt/fzf/install
-12. Install AG from brew (for better FZF file ignore control)
-13. Install BAT from brew for syntax hilighting in FZF preview pane
-14. Install TMUX Resurrect plugin to ~/.config/tmux/tmux-resurrect (https://github.com/tmux-plugins/tmux-resurrect)
-14. Install TMUX Continuum plugin to ~/.config/tmux/tmux-continuum (https://github.com/tmux-plugins/tmux-continuum)
-15. Install ASDF version manager
-16. Install necessary ASDF packages (node, erlang, elixir, etc)
+## New machine
 
-# BASH ENVIRONMENTS
+```sh
+xcode-select --install
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+git clone git@github.com:veturi/dotfiles.git ~/dotfiles
+~/dotfiles/install.sh
+curl https://mise.run | sh   # version manager (asdf still works, see below)
+```
 
-## document here
+`install.sh` is safe to re-run. It runs `brew bundle`, installs oh-my-zsh and TPM, and symlinks
+everything. Anything already in the way is moved to `~/.dotfiles-backup/<timestamp>/`.
+`SKIP_BREW=1 ./install.sh` to only relink. At the end it lists the manual steps still left.
 
-To get neovim configuration properly set up create a symlink from ~/.vim to ~/.config/nvim
-Verify .vimrc is also symlinked to ~/.config/nvim/init.vim
+## Layout
 
-when on OSX and using iTerm there is a bug with NeoVim and xterm256 terminfo sending wrong keycode
-on ctrl+h combination (navigation between split screen panes). to fix this issue one must symlink
-$TERM.ti -file to ~/.$TERM.ti and call it in .profile with 'tic .$TERM.ti' to get it loaded
-issue described here:
-https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
+| Path | Linked to |
+|---|---|
+| `zsh/zshrc` | `~/.zshrc` |
+| `git/gitconfig`, `git/gitignore_global` | `~/.gitconfig`, `~/.gitignore_global` |
+| `vim/core.vim` | `~/.vimrc` (shared plugin-free core) |
+| `vim/colors` | `~/.vim/colors` |
+| `config/nvim` | `~/.config/nvim` (sources `core.vim`, adds plugins) |
+| `tmux/tmux.conf` | `~/.tmux.conf` |
+| `config/herdr/config.toml` | `~/.config/herdr/config.toml` |
+| `config/ghostty` | `~/.config/ghostty` |
+| `config/fd` | `~/.config/fd` (global ignores for fzf file search) |
+| `iterm/veturi.json` | iTerm2 DynamicProfiles |
+| `rectangle/rectangle.sh` | run manually, writes Rectangle prefs |
 
+Machine specific config that shouldn't be shared goes in `~/.zshrc.local` and
+`~/.gitconfig.local` (e.g. work email). Both are sourced if present.
 
-# MACOS General settings and stuff
-- Turn off font smoothing from "System Preferences -> General"
+## Version managers
 
+`.zshrc` activates mise if it's installed, otherwise asdf shims. Never both.
+Both read `.tool-versions`, so projects work with either while migrating.
 
-# Logitech Litra Glow lights on elgato stream deck
-1. Plug in streaming lights to USB ports
-2. Copy dotfiles/zsh/custom/aliases.zsh to ~/.oh-my-zsh/custom/aliases.zsh
-3. build hidapitester from source to get the latest version and copy to /usr/local/bin to include binary automatically to path. More information in ZSH aliases file
-4. Now you can execute litra_<optionhere> aliases from the command line
-5. Create MacOS Shortcut for terminal app and execute the relevant command:
-   5.1 example script: "source /Users/jarno/.oh-my-zsh/custom/aliases.zsh && litra_off"
-6. You can now include the MacOS shortcuts to Elgato stream deck and avoid installing Logitech GHub which is 120% dickballs
+## Vim / Neovim
+
+- `vim/core.vim` has all settings and keymaps, no plugins. On a remote host:
+  `curl -fsSL https://raw.githubusercontent.com/veturi/dotfiles/master/vim/core.vim -o ~/.vimrc`
+- Neovim: lazy.nvim, treesitter, native LSP, blink.cmp, nvim-lint (credo on save).
+  First start installs plugins. Then `:MasonInstall expert` (or `elixir-ls`) for Elixir.
+  `expert` is used if found on PATH, otherwise elixir-ls.
+
+## iTerm2
+
+The profile is loaded as a Dynamic Profile. Set it as default in Settings → Profiles.
+Colors: `iterm/gruvbox.itermcolors`, `iterm/anderson.itermcolors`.
+
+## tmux
+
+Prefix is `§` (herdr uses `ctrl+space`). After first start press `§ I` to install plugins
+(resurrect, continuum).
+
+## Logitech Litra Glow lights on Elgato Stream Deck
+
+1. Build [hidapitester](https://github.com/todbot/hidapitester#compiling) from source (older
+   versions lack `--serial`) and copy it to `/usr/local/bin`
+2. `litra_<option>` functions come from `zsh/litra.zsh`, loaded by `.zshrc`. Serial numbers are
+   hardcoded there, get them with `hidapitester --list-details`
+3. Create a macOS Shortcut running a shell script:
+   `source ~/dotfiles/zsh/litra.zsh && litra_off`
+4. Add the Shortcuts to the Stream Deck and skip installing Logitech G HUB.

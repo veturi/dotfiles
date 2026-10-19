@@ -1,0 +1,27 @@
+# CTAGS source file
+tags
+
+# macOS
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+.hex
+
+node_modules
+
+/_build
+/deps
+/.fetch
+*.ez
+*.beam
+
+# Elixir tooling
+.elixir_ls/
+.expert/
+.lexical/
+erl_crash.dump
+
+# Editors
+*.swp
+Session.vim

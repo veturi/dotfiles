@@ -1,0 +1,21 @@
+# herdr configuration, only non-defaults.
+# All options: herdr writes a commented default config on first run.
+onboarding = false
+
+[theme]
+name = "gruvbox"
+auto_switch = false
+
+[keys]
+prefix = "ctrl+space"
+split_vertical = "prefix+%"
+split_horizontal = "prefix+\""
+
+[ui]
+status_indicators = "symbols"
+
+[ui.toast]
+delivery = "terminal"
+
+[experimental]
+pane_history = false

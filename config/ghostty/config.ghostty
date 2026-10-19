@@ -1,0 +1,3 @@
+theme = Gruvbox Dark Hard
+keybind = super+shift+t=toggle_quick_terminal
+
