@@ -76,7 +76,6 @@ manual=()
   || manual+=("Neovim: open nvim once (plugins install), then :MasonInstall expert (or elixir-ls)")
 command -v mise >/dev/null || [[ -d "$HOME/.asdf" ]] || manual+=("Version manager: curl https://mise.run | sh")
 command -v herdr >/dev/null || manual+=("herdr: not installed, see https://herdr.dev")
-[[ -x /usr/local/bin/hidapitester ]] || manual+=("Litra lights (optional): build hidapitester and copy to /usr/local/bin, see README")
 [[ -f "$HOME/.gitconfig.local" ]] || manual+=("Git (optional): work email etc. in ~/.gitconfig.local")
 manual+=("Restart the terminal or run: exec zsh")
 

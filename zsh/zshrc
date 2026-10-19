@@ -61,8 +61,5 @@ alias gpom="git pull origin master"
 alias gpuom="git push origin master"
 alias yolo="claude --dangerously-skip-permissions"
 
-# Logitech Litra Glow lights
-source "$DOTFILES/zsh/litra.zsh"
-
 # Machine specific stuff (not in git)
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

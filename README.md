@@ -59,12 +59,3 @@ Colors: `iterm/gruvbox.itermcolors`, `iterm/anderson.itermcolors`.
 Prefix is `§` (herdr uses `ctrl+space`). After first start press `§ I` to install plugins
 (resurrect, continuum).
 
-## Logitech Litra Glow lights on Elgato Stream Deck
-
-1. Build [hidapitester](https://github.com/todbot/hidapitester#compiling) from source (older
-   versions lack `--serial`) and copy it to `/usr/local/bin`
-2. `litra_<option>` functions come from `zsh/litra.zsh`, loaded by `.zshrc`. Serial numbers are
-   hardcoded there, get them with `hidapitester --list-details`
-3. Create a macOS Shortcut running a shell script:
-   `source ~/dotfiles/zsh/litra.zsh && litra_off`
-4. Add the Shortcuts to the Stream Deck and skip installing Logitech G HUB.
