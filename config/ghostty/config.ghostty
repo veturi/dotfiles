@@ -1,3 +1,5 @@
 theme = Gruvbox Dark Hard
 keybind = super+shift+t=toggle_quick_terminal
 
+# Option+Backspace deletes the previous word (sends ESC+DEL, i.e. backward-kill-word)
+keybind = alt+backspace=text:\x1b\x7f
