@@ -51,6 +51,11 @@ fi
 # herdr (only the config file, the dir holds runtime state)
 link config/herdr/config.toml "$HOME/.config/herdr/config.toml"
 
+# herdr-app (desktop app): only personal files, the dir holds generated files and runtime state
+link config/herdr-app/settings.json "$HOME/.config/herdr-app/settings.json"
+link config/herdr-app/keys.json "$HOME/.config/herdr-app/keys.json"
+link config/herdr-app/themes/gruvbox.json "$HOME/.config/herdr-app/themes/gruvbox.json"
+
 # fd global ignores
 link config/fd "$HOME/.config/fd"
 

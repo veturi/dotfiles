@@ -28,6 +28,7 @@ everything. Anything already in the way is moved to `~/.dotfiles-backup/<timesta
 | `config/nvim` | `~/.config/nvim` (sources `core.vim`, adds plugins) |
 | `tmux/tmux.conf` | `~/.tmux.conf` |
 | `config/herdr/config.toml` | `~/.config/herdr/config.toml` |
+| `config/herdr-app/{settings,keys}.json`, `themes/gruvbox.json` | `~/.config/herdr-app/` (desktop app, files only) |
 | `config/ghostty` | `~/.config/ghostty` |
 | `config/fd` | `~/.config/fd` (global ignores for fzf file search) |
 | `iterm/veturi.json` | iTerm2 DynamicProfiles |
