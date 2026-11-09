@@ -33,6 +33,7 @@ export HOMEBREW_NO_ANALYTICS=1
 zstyle ':completion:*:ssh:*' hosts off
 
 # PATH
+[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
 [[ -d "$HOME/.config/herd-lite/bin" ]] && export PATH="$HOME/.config/herd-lite/bin:$PATH"
 
