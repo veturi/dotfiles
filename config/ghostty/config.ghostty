@@ -3,3 +3,6 @@ keybind = super+shift+t=toggle_quick_terminal
 
 # Option+Backspace deletes the previous word (sends ESC+DEL, i.e. backward-kill-word)
 keybind = alt+backspace=text:\x1b\x7f
+
+# Over ssh, install Ghostty's terminfo on the remote (fallback: xterm-256color) so keys like backspace work
+shell-integration-features = ssh-terminfo,ssh-env
